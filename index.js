@@ -50,9 +50,11 @@ function createSingleJson(dest, paths) {
 		})
 }
 
-getDirs('json')
-	.then(getFiles)
-	.then(createAllJson)
-	.catch(err => {
-		throw new Error(err)
-	})
+module.exports = dir => {
+	getDirs(dir)
+		.then(getFiles)
+		.then(createAllJson)
+		.catch(err => {
+			throw new Error(err)
+		})
+}
