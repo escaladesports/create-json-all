@@ -42,7 +42,13 @@ function createAllJson(obj) {
 	return Promise.all(promises)
 }
 function createSingleJson(dest, paths) {
-	const promises = paths.map(path => fs.readJson(path))
+	const promises = paths.map(path => {
+		return fs.readJson(path)
+			.then(obj => {
+				obj.path = path
+				return obj
+			})
+	})
 	return Promise.all(promises)
 		.then(contents => {
 			return fs.outputJson(`${dest}/all.json`, contents)
