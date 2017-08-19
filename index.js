@@ -9,7 +9,6 @@ function getDirs(path) {
 		dir.subdirs(path, (err, dirs) => {
 			if (err) return reject(err)
 			dirs.unshift(path)
-			console.log(dirs)
 			resolve(dirs)
 		})
 	})
