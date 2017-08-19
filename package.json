@@ -1,0 +1,12 @@
+{
+  "name": "create-json-all",
+  "version": "0.0.0",
+  "main": "index.js",
+  "author": "Kennedy Rose <krose@escaladesports.com>",
+  "license": "MIT",
+  "dependencies": {
+    "fs-extra": "^4.0.1",
+    "glob-all": "^3.1.0",
+    "node-dir": "^0.1.17"
+  }
+}
